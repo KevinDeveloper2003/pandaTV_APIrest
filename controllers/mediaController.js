@@ -1,4 +1,4 @@
-const Media = require('../models/Media');
+const Media = require('../models/media');
 
 // Controlador para agregar una nueva película o serie
 exports.addMedia = async (req, res) => {
