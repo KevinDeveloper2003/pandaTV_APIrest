@@ -1,5 +1,4 @@
-const app = require('./app');
-
+const express = require('express');
 require('./db/db-connection-mongo');
 require('dotenv').config();
 const tipoRoutes = require('./routes/tipoRoutes');
@@ -7,6 +6,10 @@ const mediaRoutes = require('./routes/mediaRoutes');
 const productoraRoutes = require('./routes/productoraRoutes');
 const genreRoutes = require('./routes/genreRoutes');
 const directorRoutes = require('./routes/directorRoutes');
+
+const app = express();
+app.use(express.json());
+
 
 async function main() {
   await app.listen(process.env.PORT);

@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node .",
-    "build": "babel src --out-dir dist"
+    "start": "node ."
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +20,6 @@
   },
   "keywords": [],
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
     "nodemon": "^3.1.0"
   }
 }
