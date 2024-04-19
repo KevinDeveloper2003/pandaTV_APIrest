@@ -1,0 +1,27 @@
+const app = require('./app');
+const cors = require('cors');
+require('./db/db-connection-mongo');
+const tipoRoutes = require('./routes/tipoRoutes');
+const mediaRoutes = require('./routes/mediaRoutes');
+const productoraRoutes = require('./routes/productoraRoutes');
+const genreRoutes = require('./routes/genreRoutes');
+const directorRoutes = require('./routes/directorRoutes');
+
+async function main() {
+  await app.listen(5001);
+  console.log('Server on port 5001, Congratulations!');
+}
+
+app.get('/', (req, res) => {
+  res.send('Hola mundo!!!!!');
+})
+app.use(cors({
+  origin: 'http://localhost:4321',
+}))
+app.use('/api/tipo', tipoRoutes);
+app.use('/api/productora', productoraRoutes);
+app.use('/api/genre', genreRoutes);
+app.use('/api/director', directorRoutes);
+app.use('/api/media', mediaRoutes);
+
+main();
