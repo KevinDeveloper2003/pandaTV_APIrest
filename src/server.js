@@ -10,7 +10,7 @@ const directorRoutes = require('./routes/directorRoutes');
 
 async function main() {
   await app.listen(process.env.PORT);
-  console.log(`Server on port ${process.env.PORT}, Congratulations!`);
+  console.log(`Server on port ${process.env.PORT}, Congratulations`);
 }
 
 app.get('/', (req, res) => {
