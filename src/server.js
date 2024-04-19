@@ -1,6 +1,7 @@
 const app = require('./app');
-const cors = require('cors');
+
 require('./db/db-connection-mongo');
+require('dotenv').config();
 const tipoRoutes = require('./routes/tipoRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 const productoraRoutes = require('./routes/productoraRoutes');
@@ -8,16 +9,14 @@ const genreRoutes = require('./routes/genreRoutes');
 const directorRoutes = require('./routes/directorRoutes');
 
 async function main() {
-  await app.listen(5001);
-  console.log('Server on port 5001, Congratulations!');
+  await app.listen(process.env.PORT);
+  console.log(`Server on port ${process.env.PORT}, Congratulations!`);
 }
 
 app.get('/', (req, res) => {
   res.send('Hola mundo!!!!!');
 })
-app.use(cors({
-  origin: 'http://localhost:4321',
-}))
+
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);
 app.use('/api/genre', genreRoutes);

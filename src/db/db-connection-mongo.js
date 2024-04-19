@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const URI = "mongodb+srv://pandaTV:pandatv@pandatv.bmfcmb9.mongodb.net/?retryWrites=true&w=majority&appName=PandaTV";
-
-mongoose.connect(URI);
+mongoose.connect(process.env.DB_MONGO);
 
 const connection = mongoose.connection;
 
